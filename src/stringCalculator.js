@@ -19,10 +19,16 @@ module.exports = function stringCalculator(input) {
     let delimiter = null;
     let numbers = null;
     const defaultDelimiter = /,|\n|\s+/;
-    const customDelimiterMatch = input.match(/^\/\/\[(.+)\]\n/);
+    const customDelimiterMatch = input.match(/^\/\/(\[.+\])+\n/);
 
     if (customDelimiterMatch) {
-        delimiter = new RegExp(customDelimiterMatch[1]);
+        delimiter = customDelimiterMatch[0]
+            .slice(2, -1) // remove the slashes and new line
+            .split('][') // split the delimiters
+            .map(delimiter => delimiter.replace(/[\[\]]/g, '')) // remove the opening and closing bracket
+
+        delimiter = new RegExp(delimiter.join('|'));
+
         numbers = input.replace(/^\/\/\[(.+)\]\n/, ''); // remove the first line (delimiter)
     }
     else {
