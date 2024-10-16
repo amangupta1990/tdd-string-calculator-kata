@@ -7,6 +7,6 @@ module.exports = function stringCalculator(input) {
         return parseInt(input);
     }
 
-    const values = input.split(',');
-    return values.reduce((acc, value) => acc + parseInt(value), 0);
+    const numbers = input.split(/,|\n/);
+    return numbers.reduce((acc, number) => acc + parseInt(number), 0);
 }
