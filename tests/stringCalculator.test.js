@@ -33,7 +33,9 @@ describe('String Calculator', () => {
         expect(resultEvaluator("//[;;]\n1;;2;;3", 6));
     });
 
-
+    it('should use multiple delimiters', () => {
+        expect(resultEvaluator("//[;][,]\n1;2,3", 6));
+    })
 
     it('show throw an exception if a negative number(s) is found', () => {
         expect(() => stringCalculator("-1")).toThrow('Negatives not allowed');
