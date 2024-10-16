@@ -19,11 +19,11 @@ module.exports = function stringCalculator(input) {
     let delimiter = null;
     let numbers = null;
     const defaultDelimiter = /,|\n|\s+/;
-    const customDelimiterMatch = input.match(/^\/\/(.+)\n/);
+    const customDelimiterMatch = input.match(/^\/\/\[(.+)\]\n/);
 
     if (customDelimiterMatch) {
         delimiter = new RegExp(customDelimiterMatch[1]);
-        numbers = input.replace(/^\/\/(.+)\n/, ''); // remove the first line (delimiter)
+        numbers = input.replace(/^\/\/\[(.+)\]\n/, ''); // remove the first line (delimiter)
     }
     else {
         delimiter = defaultDelimiter;
