@@ -17,7 +17,7 @@ describe('String Calculator', () => {
 
     it('should return the sum of numbers separated by spaces', () => {
         expect(resultEvaluator("5 10", 15));
-        expect(resultEvaluator("5   10", 30));
+        expect(resultEvaluator("5   10", 15));
     });
 
     it('should return the sum of numbers separated by a comma and newlines', () => {
