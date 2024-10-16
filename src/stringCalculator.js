@@ -8,5 +8,5 @@ module.exports = function stringCalculator(input) {
     }
 
     const values = input.split(',');
-    return parseInt(values[0]) + parseInt(values[1]);
+    return values.reduce((acc, value) => acc + parseInt(value), 0);
 }
