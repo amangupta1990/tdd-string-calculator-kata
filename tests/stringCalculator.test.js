@@ -24,6 +24,10 @@ describe('String Calculator', () => {
         expect(resultEvaluator("1\n4,5", 10));
     });
 
+    it('should use the delimiter specified in the first line', () => {
+        expect(resultEvaluator("//;\n1;2", 3));
+    });
+
     const resultEvaluator = (input, expected) => {
         expect(stringCalculator(input)).toBe(expected);
     }
