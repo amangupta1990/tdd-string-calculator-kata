@@ -4,8 +4,14 @@ module.exports = function stringCalculator(input) {
     }
 
     if (!isNaN(input)) {
-        return parseInt(input);
+        if (parseInt(input) < 0) {
+            throw new Error('Negatives not allowed');
+        }
+        else
+            return parseInt(input);
     }
+
+
 
     let delimiter = null;
     let numbers = null;
