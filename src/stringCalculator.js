@@ -8,7 +8,10 @@ module.exports = function stringCalculator(input) {
             throw new Error('Negatives not allowed');
         }
         else
-            return parseInt(input);
+            if (parseInt(input) > 1000) {
+                return 0;
+            }
+        return parseInt(input);
     }
 
 
