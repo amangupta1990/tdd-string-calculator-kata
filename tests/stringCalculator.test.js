@@ -15,7 +15,9 @@ describe('String Calculator', () => {
         expect(resultEvaluator("1,2,3,4,5", 15));
     });
 
-
+    it('should return the sum of numbers separated by a comma and newlines', () => {
+        expect(resultEvaluator("1\n4,5", 10));
+    });
 
     const resultEvaluator = (input, expected) => {
         expect(stringCalculator(input)).toBe(expected);
