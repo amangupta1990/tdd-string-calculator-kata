@@ -11,6 +11,10 @@ describe('String Calculator', () => {
         expect(resultEvaluator(" 3", 3));
     })
 
+    it('should return the sum of two numbers separated by a comma', () => {
+        expect(resultEvaluator("1,2", 3));
+    });
+
     const resultEvaluator = (input, expected) => {
         expect(stringCalculator(input)).toBe(expected);
     }
