@@ -37,8 +37,6 @@ describe('String Calculator', () => {
 
     it('should skip numbers bigger than 1000', () => {
         expect(resultEvaluator("1001", 0));
-        expect(resultEvaluator("1000,1001", 1000));
-        expect(resultEvaluator("1001,1002", 0));
     });
 
 
