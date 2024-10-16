@@ -29,8 +29,9 @@ describe('String Calculator', () => {
         expect(resultEvaluator("//;;\n1;;2;;3", 6));
     });
 
-    it('show throw an exception if a negative number is found', () => {
+    it('show throw an exception if a negative number(s) is found', () => {
         expect(() => stringCalculator("-1")).toThrow('Negatives not allowed');
+        expect(() => stringCalculator("1,-2")).toThrow('Negatives not allowed');
 
     })
 
