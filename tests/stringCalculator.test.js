@@ -31,7 +31,7 @@ describe('String Calculator', () => {
 
     it('show throw an exception if a negative number(s) is found', () => {
         expect(() => stringCalculator("-1")).toThrow('Negatives not allowed');
-        expect(() => stringCalculator("1,-2")).toThrow('Negatives not allowed');
+        expect(() => stringCalculator("1,-2")).toThrow('Negatives not allowed: -2');
 
     })
 
