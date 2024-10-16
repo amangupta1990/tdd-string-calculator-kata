@@ -7,5 +7,5 @@
 - nodejs
 
 ### setup:
-- run `run npm install` after cloning the repo
+- run `npm install` after cloning the repo
 - run `npm test` to run the tests
