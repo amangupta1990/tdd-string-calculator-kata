@@ -1,7 +1,7 @@
 {
   "name": "tddkata",
   "version": "1.0.0",
-  "description": "",
+  "description": "a simple test driven development kata for a string calculator",
   "main": "index.js",
   "author": "Aman Gupta",
   "email": "amangupta.1990@ymail.com",
