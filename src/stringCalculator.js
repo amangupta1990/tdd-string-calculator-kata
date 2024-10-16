@@ -31,7 +31,7 @@ module.exports = function stringCalculator(input) {
     }
 
 
-    const numbersArray = numbers.split(delimiter).map(number => parseInt(number));
+    const numbersArray = numbers.split(delimiter).map(number => parseInt(number)).filter(number => number <= 1000);
     const negativeNumbers = numbersArray.filter(number => number < 0);
     if (negativeNumbers.length > 0) {
         throw new Error(`Negatives not allowed: ${negativeNumbers.join(', ')}`);
