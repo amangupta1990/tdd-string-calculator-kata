@@ -26,8 +26,14 @@ describe('String Calculator', () => {
 
     it('should use the delimiter specified in the first line', () => {
         expect(resultEvaluator("//[;]\n1;2", 3));
+
+    });
+
+    it('should use delimiters of any length', () => {
         expect(resultEvaluator("//[;;]\n1;;2;;3", 6));
     });
+
+
 
     it('show throw an exception if a negative number(s) is found', () => {
         expect(() => stringCalculator("-1")).toThrow('Negatives not allowed');
