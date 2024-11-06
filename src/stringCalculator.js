@@ -21,13 +21,20 @@ module.exports = function stringCalculator(input) {
 
 
     const numbersArray = numbers.split(delimiter).map(number => parseInt(number)).filter(number => number <= 1000);
-    const negativeNumbers = numbersArray.filter(number => number < 0);
+
+    const negativeNumbers = filterNegatives(numbersArray);
     if (negativeNumbers.length > 0) {
         throw new Error(`Negatives not allowed: ${negativeNumbers.join(', ')}`);
     }
+
     return numbersArray.reduce((acc, number) => acc + number, 0);
 }
 
+
+function filterNegatives(numbersArray) {
+    return numbersArray.filter(number => number < 0);
+
+}
 
 function getcustomDelimiter(input) {
     const customDelimiterMatch = input.match(/^\/\/(\[.+\])+\n/);
