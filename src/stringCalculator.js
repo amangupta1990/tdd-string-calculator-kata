@@ -11,7 +11,8 @@ module.exports = function stringCalculator(stringInput) {
         throw new Error(`Negatives not allowed: ${negativeNumbers.join(', ')}`);
     }
 
-    return numbersArray.reduce((acc, number) => acc + number, 0);
+    return filterLessThanThousand(numbersArray)
+        .reduce((acc, number) => acc + number, 0);
 }
 
 
@@ -33,9 +34,13 @@ function getNumArrayFromString(numberString) {
         numbers = numberString;
     }
 
-    return numbers.split(delimiter).map(number => parseInt(number)).filter(number => number <= 1000);
+    return numbers.split(delimiter).map(number => parseInt(number))
 }
 
+
+function filterLessThanThousand(numberArray) {
+    return numberArray.filter(number => number <= 1000);
+}
 
 function filterNegatives(numbersArray) {
     return numbersArray.filter(number => number < 0);
