@@ -3,19 +3,6 @@ module.exports = function stringCalculator(input) {
         return 0;
     }
 
-    if (!isNaN(input)) {
-        if (parseInt(input) < 0) {
-            throw new Error('Negatives not allowed');
-        }
-        else
-            if (parseInt(input) > 1000) {
-                return 0;
-            }
-        return parseInt(input);
-    }
-
-
-
     let delimiter = null;
     let numbers = null;
     const defaultDelimiter = /,|\n|\s+/;

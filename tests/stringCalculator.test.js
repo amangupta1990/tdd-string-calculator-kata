@@ -1,6 +1,7 @@
 const stringCalculator = require('../src/stringCalculator');
 
 describe('String Calculator', () => {
+
     it('should return 0 if string is empty', () => {
         expect(stringCalculator('')).toBe(0);
     });
@@ -42,7 +43,7 @@ describe('String Calculator', () => {
     })
 
     it('show throw an exception if a negative number(s) is found', () => {
-        expect(() => stringCalculator("-1")).toThrow('Negatives not allowed');
+        expect(() => stringCalculator("-1")).toThrow('Negatives not allowed: -1');
         expect(() => stringCalculator("1,-2")).toThrow('Negatives not allowed: -2');
 
     })
