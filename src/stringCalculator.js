@@ -1,26 +1,10 @@
-module.exports = function stringCalculator(input) {
-    if (input === '') {
+module.exports = function stringCalculator(stringInput) {
+    if (stringInput === '') {
         return 0;
     }
 
-    let delimiter = null;
-    let numbers = null;
-    const defaultDelimiter = /,|\n|\s+/;
 
-    const customDelimiter = getcustomDelimiter(input);
-    if (customDelimiter) {
-        delimiter = new RegExp(customDelimiter);
-        inputWithoutDelimiterLine = input.split('\n').slice(1).join('\n');
-        numbers = inputWithoutDelimiterLine;
-
-    }
-    else {
-        delimiter = defaultDelimiter;
-        numbers = input;
-    }
-
-
-    const numbersArray = numbers.split(delimiter).map(number => parseInt(number)).filter(number => number <= 1000);
+    const numbersArray = getNumArrayFromString(stringInput)
 
     const negativeNumbers = filterNegatives(numbersArray);
     if (negativeNumbers.length > 0) {
@@ -28,6 +12,28 @@ module.exports = function stringCalculator(input) {
     }
 
     return numbersArray.reduce((acc, number) => acc + number, 0);
+}
+
+
+function getNumArrayFromString(numberString) {
+
+    let delimiter = null;
+    let numbers = null;
+    const defaultDelimiter = /,|\n|\s+/;
+
+    const customDelimiter = getcustomDelimiter(numberString);
+    if (customDelimiter) {
+        delimiter = new RegExp(customDelimiter);
+        inputWithoutDelimiterLine = numberString.split('\n').slice(1).join('\n');
+        numbers = inputWithoutDelimiterLine;
+
+    }
+    else {
+        delimiter = defaultDelimiter;
+        numbers = numberString;
+    }
+
+    return numbers.split(delimiter).map(number => parseInt(number)).filter(number => number <= 1000);
 }
 
 
