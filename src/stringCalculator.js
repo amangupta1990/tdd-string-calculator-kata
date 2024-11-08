@@ -10,7 +10,7 @@ module.exports = function stringCalculator(stringInput) {
     throw new Error(`Negatives not allowed: ${negativeNumbers.join(", ")}`);
   }
 
-  return filterLessThanThosand(numbersArray).reduce(
+  return filterLessThanThousand(numbersArray).reduce(
     (acc, number) => acc + number,
     0
   );
