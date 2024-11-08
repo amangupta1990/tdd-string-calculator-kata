@@ -16,6 +16,13 @@ module.exports = function stringCalculator(stringInput) {
   );
 };
 
+// --- helper methods ---
+
+/*
+ takes a string input with or without a custum delimiter and,
+ returns an array of numbers. if no delimiter is specified in the input,
+ it uses default delimiters ( commas , spaces and newlines ) 
+*/
 function getNumArrayFromString(numberString) {
   let delimiter = null;
   let numbers = null;
@@ -34,14 +41,9 @@ function getNumArrayFromString(numberString) {
   return numbers.split(delimiter).map((number) => parseInt(number));
 }
 
-function filterLessThanThousand(numberArray) {
-  return numberArray.filter((number) => number <= 1000);
-}
-
-function filterNegatives(numbersArray) {
-  return numbersArray.filter((number) => number < 0);
-}
-
+/* accepts custom delimiters speified in the first line of the string input.
+delimiters must be separated by []. multiple delimiters can be specified
+*/
 function getcustomDelimiter(input) {
   const customDelimiterMatch = input.match(/^\/\/(\[.+\])+\n/);
 
@@ -55,4 +57,12 @@ function getcustomDelimiter(input) {
 
     return combinedDelimiters;
   } else return null;
+}
+
+function filterLessThanThousand(numberArray) {
+  return numberArray.filter((number) => number <= 1000);
+}
+
+function filterNegatives(numbersArray) {
+  return numbersArray.filter((number) => number < 0);
 }
